@@ -1,34 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<?= $this->extend('layouts/template2') ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <div>
-        <table>
-            <thead>
+<?= $this->section('content') ?>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>NoReg</th>
+                <th>Nama</th>
+                <th>NIK</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($Datapasien as $row) : ?>
                 <tr>
-                    <th>NoReg</th>
-                    <th>Nama</th>
-                    <th>NIK</th>
+                    <td><?= $row['NoReg']; ?></td>
+                    <td><?= $row['Nama']; ?></td>
+                    <td><?= $row['NIK']; ?></td>
                 </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($Datapasien as $row) : ?>
-                    <tr>
-                        <td><?= $row['NoReg']; ?></td>
-                        <td><?= $row['Nama']; ?></td>
-                        <td><?= $row['NIK']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-</body>
-
-</html>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+<?= $this->endSection() ?>
