@@ -11,6 +11,6 @@ class DataPasien extends Controller
     {
         $model = new DataPasienModel;
         $data['Datapasien'] = $model->getDataPasien();
-        echo view('datapasien_view', $data);
+        echo view('datapasien', $data);
     }
 }

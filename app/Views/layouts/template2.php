@@ -5,56 +5,62 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Kartika Hospital</title>
-    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
+
+    <!-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'> -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/r-2.2.9/datatables.min.css" />
 
 </head>
 
-<body oncontextmenu='return false' class='snippet-body'>
+<!-- <body oncontextmenu='return true' class='snippet-body'> -->
 
-    <body id="body-pd">
-        <header class="header" id="header">
-            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-            <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
-        </header>
-        <div class="l-navbar" id="nav-bar">
-            <nav class="nav">
-                <div>
-                    <a href="#">
-                        <!-- <i class='bx bx-layer nav_logo-icon'></i> -->
-                        <img src="assets/logo-kartika.png" alt="KARTIKA HOSPITAL" style="height: 50px; padding-left:3px; margin-bottom:40px;">
-                    </a>
-                    <div class="nav_list">
-                        <a href="#" class="nav_link">
-                            <i class='bx bx-grid-alt nav_icon'></i>
-                            <span class="nav_name">Dashboard</span>
-                        </a>
-                        <a href="#" class="nav_link">
-                            <i class='bx bxs-user nav_icon'></i>
-                            <span class="nav_name">Tambah Data</span>
-                        </a>
-                        <a href="#" class="nav_link">
-                            <i class='bx bx-detail nav_icon'></i>
-                            <span class="nav_name">Messages</span>
-                        </a>
-                    </div>
-                </div>
-                <a href="#" class="nav_link">
-                    <i class='bx bx-log-out nav_icon'></i>
-                    <span class="nav_name">SignOut</span>
+<body id="body-pd" class="snippet-body" style="height: 100%;">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="header_img"> <i class="bx bxs-user bx-lg" style="color: #fff;"></i> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <a href="<?= base_url() ?>">
+                    <img src="assets/logo-kartika.png" alt="KARTIKA HOSPITAL" style="height: 50px; padding-left:3px; margin-bottom:40px;">
                 </a>
-            </nav>
-        </div>
-        <!--Container Main start-->
-        <div class="height-100 bg-light">
-            <?= $this->renderSection('content') ?>
-        </div>
-        <!--Container Main end-->
-        <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
-        <script type='text/javascript' src=''></script>
-        <script type='text/javascript' src=''></script>
-        <script type='text/Javascript'>document.addEventListener("DOMContentLoaded", function(event) {
+                <div class="nav_list">
+                    <a href="<?= base_url() ?>" class="nav_link">
+                        <i class='bx bx-grid-alt nav_icon'></i>
+                        <span class="nav_name">Dashboard</span>
+                    </a>
+                    <a href="<?= base_url() ?>" class="nav_link">
+                        <i class='bx bxs-user nav_icon'></i>
+                        <span class="nav_name">Tambah Data</span>
+                    </a>
+                    <a href="<?= base_url('datapasien') ?>" class="nav_link">
+                        <i class='bx bx-detail nav_icon'></i>
+                        <span class="nav_name">Data Hasil SWAB</span>
+                    </a>
+                </div>
+            </div>
+            <a href="#" class="nav_link">
+                <i class='bx bx-log-out nav_icon'></i>
+                <span class="nav_name">SignOut</span>
+            </a>
+        </nav>
+    </div>
+    <!--Container Main start-->
+    <div style="background: #f0f2f5;">
+        <?= $this->renderSection('content') ?>
+    </div>
+    <!--Container Main end-->
+
+    <!-- <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script> -->
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.3/r-2.2.9/datatables.min.js"></script>
+    <script type='text/Javascript'>document.addEventListener("DOMContentLoaded", function(event) {
                 const showNavbar = (toggleId, navId, bodyId, headerId) =>{
                     const toggle = document.getElementById(toggleId),
                     nav = document.getElementById(navId),
@@ -88,10 +94,14 @@
                 }
 
                 linkColor.forEach(l=> l.addEventListener('click', colorLink))
-
-                // Your code to run since DOM is loaded and ready
             });
         </script>
-    </body>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
+</body>
+<!-- </body> -->
 
 </html>
