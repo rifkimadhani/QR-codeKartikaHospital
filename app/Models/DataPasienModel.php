@@ -16,4 +16,9 @@ class DataPasienModel extends Model
             return $this->getWhere(['NoReg' => $NoReg]);
         }
     }
+
+    public function simpan($data)
+    {
+        return $this->db->table('Datapasien')->insert($data);
+    }
 }
