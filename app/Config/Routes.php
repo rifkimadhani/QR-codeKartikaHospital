@@ -34,6 +34,8 @@ $routes->setAutoRoute(false);
 $routes->get('/', 'Home::index');
 $routes->get('/user_view', 'Users::index');
 $routes->get('/datapasien', 'DataPasien::index');
+$routes->get('/datapasien/tambah', 'DataPasien::tambah');
+$routes->post('/datapasien/simpan', 'DataPasien::simpan');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -7,9 +7,9 @@
     <title>Kartika Hospital</title>
 
     <!-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'> -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= base_url('bootstrap/css/bootstrap.css') ?>">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<?= base_url('style.css') ?>">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/r-2.2.9/datatables.min.css" />
 
 </head>
@@ -25,14 +25,14 @@
         <nav class="nav">
             <div>
                 <a href="<?= base_url() ?>">
-                    <img src="assets/logo-kartika.png" alt="KARTIKA HOSPITAL" style="height: 50px; padding-left:3px; margin-bottom:40px;">
+                    <img src="<?= base_url('assets/logo-kartika.png') ?>" alt="KARTIKA HOSPITAL" style="height: 50px; padding-left:3px; margin-bottom:40px;">
                 </a>
                 <div class="nav_list">
                     <a href="<?= base_url() ?>" class="nav_link">
                         <i class='bx bx-grid-alt nav_icon'></i>
                         <span class="nav_name">Dashboard</span>
                     </a>
-                    <a href="<?= base_url() ?>" class="nav_link">
+                    <a href="<?= base_url('datapasien/tambah') ?>"  class="nav_link">
                         <i class='bx bxs-user nav_icon'></i>
                         <span class="nav_name">Tambah Data</span>
                     </a>
@@ -55,7 +55,7 @@
     <!--Container Main end-->
 
     <!-- <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script> -->
-    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="<?= base_url('bootstrap/js/bootstrap.js') ?>"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
