@@ -40,5 +40,11 @@ class Users extends BaseController
             return redirect()->back();
         }
     }
+
+    public function logout()
+    {
+        $session = session();
+        $session->destroy();
+    }
    
 }
