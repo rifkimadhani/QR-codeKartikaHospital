@@ -7,6 +7,10 @@ use CodeIgniter\Model;
 class UsersModel extends Model
 {
     protected $table      = 'user';
+    protected $primaryKey = "id";
+    protected $returnType = "object";
+    protected $useTimestamps = true;
+    protected $allowedFields = ['id', 'email', 'password'];
 
     public function getUsers($id = false)
     {

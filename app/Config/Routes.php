@@ -36,6 +36,11 @@ $routes->get('/user_view', 'Users::index');
 $routes->get('/datapasien', 'DataPasien::index');
 $routes->get('/datapasien/tambah', 'DataPasien::tambah');
 $routes->post('/datapasien/simpan', 'DataPasien::simpan');
+$routes->get('/datapasien/(:any)', 'DataPasien::delete/$1');
+$routes->get('/datapasien/edit/(:any)', 'DataPasien::edit/$1');
+$routes->post('/datapasien/update/(:any)', 'DataPasien::update/$1');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

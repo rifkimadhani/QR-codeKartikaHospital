@@ -7,6 +7,9 @@ use CodeIgniter\Model;
 class DataPasienModel extends Model
 {
     protected $table      = 'Datapasien';
+    protected $primaryKey = 'NoReg';
+    protected $useAutoIncrement = true;
+    protected $allowedFields = ['NoReg', 'Nama', 'NIK', 'JenisKelamin', 'TglLahir', 'Negara', 'NoTelp', 'TglHasil', 'Hasil', 'GenN', 'Orf1ab'];
 
     public function getDataPasien($NoReg = false)
     {
@@ -20,5 +23,17 @@ class DataPasienModel extends Model
     public function simpan($data)
     {
         return $this->db->table('Datapasien')->insert($data);
+    }
+
+    public function editData($data, $NoReg)
+    {
+        $query = $this->db->table('Datapasien')->update($data, array('NoReg' => $NoReg));
+        return $query;
+    }
+
+    public function hapus($NoReg)
+    {
+        $query = $this->db->table('Datapasien')->delete(array('NoReg' => $NoReg));
+        return $query;
     }
 }

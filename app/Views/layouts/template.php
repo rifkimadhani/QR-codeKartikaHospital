@@ -2,81 +2,106 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Kartika Hospital</title>
 
-    <!-- Bootstrap CSS CDN -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'> -->
+    <link rel="stylesheet" href="<?= base_url('bootstrap/css/bootstrap.css') ?>">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="<?= base_url('style.css') ?>">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/r-2.2.9/datatables.min.css" />
 
-
-    <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <div class="col-2" style="padding-left: 0px;">
-        <nav>
-            <div class="sidebar-header container-fluid" style="background: #096b39;">
-                <img class="pt-1 pl-1 pb-1" src="assets/logo-kartika.png" alt="KARTIKA HOSPITAL" style="height: 70px;">
-            </div>
+<!-- <body oncontextmenu='return true' class='snippet-body'> -->
 
-            <h5>Dashboard</h5>
-            <ul class="fa-ul list-unstyled components">
-                <li>
-                    <a href="#">
-                        <span class="fa-li"><i class="fas fa-user-plus" aria-hidden="true"></i></span>Tambah Data
+<body id="body-pd" class="snippet-body" style="height: 100%;">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="header_img"> <i class="bx bxs-user bx-lg" style="color: #fff;"></i> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <a href="<?= base_url() ?>">
+                    <img src="<?= base_url('assets/logo-kartika.png') ?>" alt="KARTIKA HOSPITAL" style="height: 50px; padding-left:3px; margin-bottom:40px;">
+                </a>
+                <div class="nav_list">
+                    <a href="<?= base_url() ?>" class="nav_link">
+                        <i class='bx bx-grid-alt nav_icon'></i>
+                        <span class="nav_name">Dashboard</span>
                     </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="fa-li"><i class="fas fa-clipboard-list" data-fa-transform="left-2" aria-hidden="true"></i></span>Data Hasil SWAB/PCR
+                    <a href="<?= base_url('datapasien/tambah') ?>"  class="nav_link">
+                        <i class='bx bxs-user nav_icon'></i>
+                        <span class="nav_name">Tambah Data</span>
                     </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <div class="col-10">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-
-                <button type="button" id="sidebarCollapse" class="btn btn-light d-inline-block d-lg-none" data-toggle="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-align-justify"></i>
-                </button>
-
-                <div class="navbar ml-auto">
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item align-item-center">
-                            <a class="nav-link active" href="#">Logout</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active"><i class="fas fa-user-circle fa-2x"></i></a>
-                        </li>
-                    </ul>
+                    <a href="<?= base_url('datapasien') ?>" class="nav_link">
+                        <i class='bx bx-detail nav_icon'></i>
+                        <span class="nav_name">Data Hasil SWAB</span>
+                    </a>
                 </div>
             </div>
+            <a href="#" class="nav_link">
+                <i class='bx bx-log-out nav_icon'></i>
+                <span class="nav_name">SignOut</span>
+            </a>
         </nav>
-
     </div>
+    <!--Container Main start-->
+    <div style="background: #f0f2f5;">
+        <?= $this->renderSection('content') ?>
+    </div>
+    <!--Container Main end-->
 
+    <!-- <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script> -->
+    <script src="<?= base_url('bootstrap/js/bootstrap.js') ?>"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.3/r-2.2.9/datatables.min.js"></script>
+    <script type='text/Javascript'>document.addEventListener("DOMContentLoaded", function(event) {
+                const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+                    const toggle = document.getElementById(toggleId),
+                    nav = document.getElementById(navId),
+                    bodypd = document.getElementById(bodyId),
+                    headerpd = document.getElementById(headerId)
+                    // Validate that all variables exist
+                    if(toggle && nav && bodypd && headerpd){
+                        toggle.addEventListener('click', ()=>{
+                            // show navbar
+                            nav.classList.toggle('show')
+                            // change icon
+                            toggle.classList.toggle('bx-x')
+                            // add padding to body
+                            bodypd.classList.toggle('body-pd')
+                            // add padding to header
+                            headerpd.classList.toggle('body-pd')
+                        })
+                    }
+                }
 
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="bootstrap/js/bootstrap.js"></script>
+                showNavbar('header-toggle','nav-bar','body-pd','header')
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#sidebarCollapse').on('click', function() {
-                $('#sidebar').toggleClass('active');
+                /*===== LINK ACTIVE =====*/
+                const linkColor = document.querySelectorAll('.nav_link')
+
+                function colorLink(){
+                    if(linkColor){
+                        linkColor.forEach(l=> l.classList.remove('active'))
+                        this.classList.add('active')
+                    }
+                }
+
+                linkColor.forEach(l=> l.addEventListener('click', colorLink))
             });
+        </script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
         });
     </script>
 </body>
+<!-- </body> -->
 
 </html>
