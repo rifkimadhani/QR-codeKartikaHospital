@@ -33,7 +33,7 @@
                         <td><?= $row['Hasil']; ?></td>
                         <td>
                             <a href=""><span><i class="bx bx-qr" style="color: #096b39;font-size : 18px;"></i></span></a>
-                            <a href="<?= base_url('datapasien/edit/' . $row['NoReg']); ?>"><span><i class="bx bxs-pencil mx-1" style="color: #52525c;font-size : 18px;"></i></span></a>
+                            <a href="<?= base_url('datapasien/kosong'.$row['NoReg'])?>"><span><i class="bx bxs-pencil mx-1" style="color: #52525c;font-size : 18px;"></i></span></a>
                             <input type="hidden" name="_method" value="DELETE"><a href="<?= base_url('datapasien/' . $row['NoReg']); ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data?');"><span><i class="bx bxs-trash" style="color: #52525c;font-size : 18px;"></i></span></a>
                         </td>
                     </tr>

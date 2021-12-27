@@ -5,8 +5,7 @@
     <h2 class="align-middle"><i class="bx bxs-user-plus align-middle"></i> Edit Data</h2>
 </div>
 <div class="card w-80 shadow p-4 rounded-3" style="margin-right: 14px; border:none; ">
-    <form action="<?= base_url('datapasien/update/' . $pasien->NoReg) ?>" method="post">
-
+    <form action="<?= base_url('datapasien/update/' . $row['NoReg']) ?>" method="post">
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <div class="form-group was-validated">
@@ -15,7 +14,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-user-detail bx-sm"></i></span>
                         </div>
-                        <input type="text" name="regist" class="form-control" value="<?= $pasien->NoReg; ?>" required>
+                        <input type="text" name="regist" class="form-control" value="<?= $row['NoReg']; ?>" required>
                     </div>
                 </div>
                 <div class="form-group was-validated">
@@ -24,7 +23,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-id-card bx-sm"></i></span>
                         </div>
-                        <input type="text" name="ktp" class="form-control" value="<?= $pasien->NIK; ?>" required>
+                        <input type="text" name="ktp" class="form-control" value="<?= $row['NIK']; ?>" required>
                     </div>
                 </div>
                 <div class="form-group was-validated">
@@ -33,7 +32,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-user bx-sm"></i></span>
                         </div>
-                        <input type="text" name="nama" class="form-control" value="<?= $pasien->Nama; ?>" required>
+                        <input type="text" name="nama" class="form-control" value="<?= $row['Nama']; ?>" required>
                     </div>
                 </div>
                 <div class="form-group was-validated">
@@ -42,7 +41,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-calendar bx-sm"></i></span>
                         </div>
-                        <input type="date" name="tgl_lahir" class="form-control" value="<?= $pasien->TglLahir; ?>" required>
+                        <input type="date" name="tgl_lahir" class="form-control" value="<?= $row['TglLahir']; ?>" required>
                     </div>
                 </div>
                 <div class="form-group was-validated">
@@ -51,10 +50,10 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bx-male-sign bx-sm"></i></span>
                         </div>
-                        <select name="jk" class="form-select" value="<?= $pasien->JenisKelamin; ?>" aria-describedby="basic-addon1" required>
+                        <select name="jk" class="form-select" value="<?= $row['JenisKelamin']; ?>" aria-describedby="basic-addon1" required>
                             <option value="">Pilih..</option>
-                            <option value="<?= $pasien->JenisKelamin; ?>">Laki-laki</option>
-                            <option value="<?= $pasien->JenisKelamin; ?>">Perempuan</option>
+                            <option value="<?= $row['JenisKelamin']; ?>">Laki-laki</option>
+                            <option value="<?= $row['JenisKelamin']; ?>">Perempuan</option>
                         </select>
                     </div>
                 </div>
@@ -64,7 +63,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-phone bx-sm"></i></span>
                         </div>
-                        <input type="text" name="telp" class="form-control" value="<?= $pasien->NoTelp; ?>" required>
+                        <input type="text" name="telp" class="form-control" value="<?= $row['NoTelp']; ?>" required>
                     </div>
                 </div>
             </div>
@@ -76,7 +75,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bx-globe bx-sm"></i></span>
                         </div>
-                        <input type="text" name="negara" class="form-control" value="<?= $pasien->Negara; ?>" required>
+                        <input type="text" name="negara" class="form-control" value="<?= $row['Negara']; ?>" required>
                     </div>
                 </div>
                 <div class="form-group was-validated">
@@ -85,7 +84,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-calendar-check bx-sm"></i></span>
                         </div>
-                        <input type="date" name="tgl_hasil" class="form-control" value="<?= $pasien->TglHasil; ?>" required>
+                        <input type="date" name="tgl_hasil" class="form-control" value="<?= $row['TglHasil']; ?>" required>
                     </div>
                 </div>
                 <div class="form-group was-validated">
@@ -94,10 +93,10 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-badge-check bx-sm"></i></span>
                         </div>
-                        <select name="hasil" class="form-select" aria-describedby="basic-addon1" value="<?= $pasien->Hasil; ?>" required>
+                        <select name="hasil" class="form-select" aria-describedby="basic-addon1" value="<?= $row['Hasil']; ?>" required>
                             <option value="">Pilih..</option>
-                            <option value="Positif">Positif</option>
-                            <option value="Negatif">Negatif</option>
+                            <option value="<?= $row['Hasil']; ?>">Positif</option>
+                            <option value="<?= $row['Hasil']; ?>">Negatif</option>
                         </select>
                     </div>
                 </div>
@@ -107,7 +106,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-badge-check bx-sm"></i></span>
                         </div>
-                        <input type="text" name="gen" class="form-control" value="<?= $pasien->GenN; ?>">
+                        <input type="text" name="gen" class="form-control" value="<?= $row['GenN']; ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -116,7 +115,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-badge-check bx-sm"></i></span>
                         </div>
-                        <input type="text" name="orf1ab" class="form-control" value="<?= $pasien->Orf1ab; ?>">
+                        <input type="text" name="orf1ab" class="form-control" value="<?= $row['Orf1ab']; ?>">
                     </div>
                 </div>
                 <div class="d-grid gap-2 mt-4">

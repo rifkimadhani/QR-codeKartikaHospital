@@ -19,6 +19,14 @@ class DataPasien extends BaseController
         echo view('addpasien');
     }
 
+    public function kosong($id)
+    {
+        $model = new DataPasienModel;
+        $data['row'] = $model->where('NoReg', $id)->first();
+        echo view('editpasien',$data);
+    }
+
+    
     public function simpan()
     {
         $data = [
@@ -43,14 +51,6 @@ class DataPasien extends BaseController
         } else {
             echo "Error";
         }
-    }
-
-    public function edit($noreg)
-    {
-        $pasien = new DataPasienModel();
-        $data['pasien'] = $pasien->getDataPasien($noreg)->getRow();
-
-        echo view('editpasien', $data);
     }
 
     public function update($NoReg)
