@@ -16,19 +16,23 @@ class Users extends BaseController
         $users = new UsersModel();
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
-        $dataUser = $users->where([
-            'email' => $email,
-        ])->first();
+        $dataUser = $users->where(['email' => $email,])->first();
         if ($dataUser) {
-            if (password_verify($password, $dataUser->password)) {
-                session()->set([
-                    'id' => $dataUser->id,
-                    'email' => $dataUser->email
-                    // 'logged_in' => TRUE
-                ]);
+            $verify_pass = password_verify($password,$dataUser->password);            
+            if ($verify_pass) {
+                $session = session();
+                $session_user = [
+                    'id'            => $dataUser->id,
+                    'email'         => $dataUser->email,
+                    'logged_in'     => TRUE
+                ];
+                $session->set($session_user);
+                // var_dump($session->has('id'));
+                // exit;
+                
                 return redirect()->to(base_url('/datapasien'));
             } else {
-                session()->setFlashdata('error', 'Email & Password Salah');
+                echo ('salah');
                 return redirect()->back();
             }
         } else {
@@ -36,4 +40,5 @@ class Users extends BaseController
             return redirect()->back();
         }
     }
+   
 }

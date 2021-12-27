@@ -40,6 +40,10 @@ $routes->get('/datapasien/(:any)', 'DataPasien::delete/$1');
 $routes->get('/datapasien/edit/(:any)', 'DataPasien::edit/$1');
 $routes->post('/datapasien/update/(:any)', 'DataPasien::update/$1');
 
+// Login
+$routes->post('/user/login','Users::process');
+
+
 
 /*
  * --------------------------------------------------------------------

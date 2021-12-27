@@ -14,7 +14,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-user-detail bx-sm"></i></span>
                         </div>
-                        <input type="text" name="regist" class="form-control" placeholder="No Registrasi" aria-label="No Registrasi" aria-describedby="basic-addon1" required>
+                        <input type="text" name="regist" class="form-control" placeholder="No Registrasi" aria-label="No Registrasi" aria-describedby="basic-addon1" autocomplete="off" required>
                     </div>
                 </div>
                 <div class="form-group was-validated">
@@ -23,7 +23,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-id-card bx-sm"></i></span>
                         </div>
-                        <input type="text" name="ktp" class="form-control" placeholder="NO KTP" aria-label="No KTP" aria-describedby="basic-addon1" required>
+                        <input type="text" name="ktp" class="form-control" placeholder="NO KTP" aria-label="No KTP" aria-describedby="basic-addon1" autocomplete="off" required>
                     </div>
                 </div>
                 <div class="form-group was-validated">
@@ -32,7 +32,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-user bx-sm"></i></span>
                         </div>
-                        <input type="text" name="nama" class="form-control" placeholder="Nama" aria-label="Nama" aria-describedby="basic-addon1" required>
+                        <input type="text" name="nama" class="form-control" placeholder="Nama" aria-label="Nama" aria-describedby="basic-addon1" autocomplete="off" required>
                     </div>
                 </div>
                 <div class="form-group was-validated">
@@ -41,7 +41,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-calendar bx-sm"></i></span>
                         </div>
-                        <input type="date" name="tgl_lahir" class="form-control" placeholder="Tanggal Lahir" aria-label="Tanggal Lahir" aria-describedby="basic-addon1" required>
+                        <input type="date" name="tgl_lahir" class="form-control" placeholder="Tanggal Lahir" aria-label="Tanggal Lahir" aria-describedby="basic-addon1" autocomplete="off" required>
                     </div>
                 </div>
                 <div class="form-group was-validated">
@@ -63,7 +63,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-phone bx-sm"></i></span>
                         </div>
-                        <input type="text" name="telp" class="form-control" placeholder="No Telepon" aria-label="No Telepon" aria-describedby="basic-addon1" required>
+                        <input type="text" name="telp" class="form-control" placeholder="No Telepon" aria-label="No Telepon" aria-describedby="basic-addon1" autocomplete="off" required>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bx-globe bx-sm"></i></span>
                         </div>
-                        <input type="text" name="negara" class="form-control" placeholder="Negara" aria-label="Negara" aria-describedby="basic-addon1" required>
+                        <input type="text" name="negara" class="form-control" placeholder="Negara" aria-label="Negara" aria-describedby="basic-addon1" autocomplete="off" required>
                     </div>
                 </div>
                 <div class="form-group was-validated">
@@ -84,7 +84,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-calendar-check bx-sm"></i></span>
                         </div>
-                        <input type="date" name="tgl_hasil" class="form-control" placeholder="Tanggal Hasil Keluar" aria-label="Tanggal Hasil Keluar" aria-describedby="basic-addon1" required>
+                        <input type="date" name="tgl_hasil" class="form-control" placeholder="Tanggal Hasil Keluar" aria-label="Tanggal Hasil Keluar" aria-describedby="basic-addon1" autocomplete="off" required>
                     </div>
                 </div>
                 <div class="form-group was-validated">
@@ -106,7 +106,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-badge-check bx-sm"></i></span>
                         </div>
-                        <input type="text" name="gen" class="form-control" placeholder="Gen N" aria-label="Gen N" aria-describedby="basic-addon1">
+                        <input type="text" name="gen" class="form-control" placeholder="Gen N" aria-label="Gen N" aria-describedby="basic-addon1" autocomplete="off">
                     </div>
                 </div>
                 <div class="form-group">
@@ -115,7 +115,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-badge-check bx-sm"></i></span>
                         </div>
-                        <input type="text" name="orf1ab" class="form-control" placeholder="Orf1ab" aria-label="Orf1ab" aria-describedby="basic-addon1">
+                        <input type="text" name="orf1ab" class="form-control" placeholder="Orf1ab" aria-label="Orf1ab" aria-describedby="basic-addon1" autocomplete="off">
                     </div>
                 </div>
                 <div class="d-grid gap-2 mt-4">

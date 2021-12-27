@@ -4,7 +4,9 @@
 <div style="padding-top: 30px; padding-bottom: 30px;">
     <h2 class="align-middle"><i class="bx bxs-detail align-middle"></i> Data Hasil SWAB/PCR</h2>
 </div>
-
+<?php
+ print_r($this->session->userdata); 
+?>
 <div class="card w-80 shadow p-4 rounded-3" style="margin-right: 14px; max-height:420px; border:none; ">
     <div></div>
     <div>
