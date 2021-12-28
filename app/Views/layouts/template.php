@@ -32,7 +32,7 @@
                         <i class='bx bx-grid-alt nav_icon'></i>
                         <span class="nav_name">Dashboard</span>
                     </a>
-                    <a href="<?= base_url('datapasien/tambah') ?>"  class="nav_link">
+                    <a href="<?= base_url('datapasien/tambah') ?>" class="nav_link">
                         <i class='bx bxs-user nav_icon'></i>
                         <span class="nav_name">Tambah Data</span>
                     </a>
@@ -42,7 +42,7 @@
                     </a>
                 </div>
             </div>
-            <a href="<?= base_url()?>" class="nav_link">
+            <a href="<?= base_url('/user/logout') ?>" class="nav_link">
                 <i class='bx bx-log-out nav_icon'></i>
                 <span class="nav_name">SignOut</span>
             </a>
