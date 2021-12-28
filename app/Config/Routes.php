@@ -33,17 +33,20 @@ $routes->setAutoRoute(false);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/user_view', 'Users::index');
-$routes->get('/datapasien', 'DataPasien::index');
-$routes->get('/datapasien/tambah', 'DataPasien::tambah');
-$routes->post('/datapasien/simpan', 'DataPasien::simpan');
-$routes->get('/datapasien/(:any)', 'DataPasien::delete/$1');
-$routes->post('/datapasien/update/(:any)', 'DataPasien::update/$1');
+$routes->get('/datapasien', 'DataPasien::index', ['filter' => 'usersAuth']);
+$routes->get('/datapasien/tambah', 'DataPasien::tambah', ['filter' => 'usersAuth']);
+$routes->post('/datapasien/simpan', 'DataPasien::simpan', ['filter' => 'usersAuth']);
+$routes->get('/edit/(:any)', 'DataPasien::edit/$1', ['filter' => 'usersAuth']);
+$routes->get('/datapasien/(:any)', 'DataPasien::delete/$1', ['filter' => 'usersAuth']);
+$routes->post('/datapasien/update/(:any)', 'DataPasien::update/$1', ['filter' => 'usersAuth']);
 // Login
-$routes->post('/user/login','Users::process');
-$routes->get('/user/logout','Users::logout');
+$routes->post('/user/login', 'Users::process');
+$routes->get('/user/logout', 'Users::logout');
+
 
 $routes->get('/kosong/(:any)','DataPasien::kosong/$1');
 $routes->get('/qrcode','DataPasien::qrcode');
+
 
 /*
  * --------------------------------------------------------------------

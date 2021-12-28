@@ -18,7 +18,7 @@ class Users extends BaseController
         $password = $this->request->getVar('password');
         $dataUser = $users->where(['email' => $email,])->first();
         if ($dataUser) {
-            $verify_pass = password_verify($password,$dataUser->password);            
+            $verify_pass = password_verify($password, $dataUser->password);
             if ($verify_pass) {
                 $session = session();
                 $session_user = [
@@ -29,7 +29,7 @@ class Users extends BaseController
                 $session->set($session_user);
                 // var_dump($session->has('id'));
                 // exit;
-                
+
                 return redirect()->to(base_url('/datapasien'));
             } else {
                 echo ('salah');
@@ -45,6 +45,6 @@ class Users extends BaseController
     {
         $session = session();
         $session->destroy();
+        return redirect()->to('/');
     }
-   
 }

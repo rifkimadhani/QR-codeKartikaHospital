@@ -20,14 +20,14 @@ class DataPasien extends BaseController
         echo view('addpasien');
     }
 
-    public function kosong($id)
+    public function edit($id)
     {
         $model = new DataPasienModel;
         $data['row'] = $model->where('NoReg', $id)->first();
-        echo view('editpasien',$data);
+        echo view('editpasien', $data);
     }
 
-    
+
     public function simpan()
     {
         $data = [
