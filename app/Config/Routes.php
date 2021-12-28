@@ -44,6 +44,9 @@ $routes->post('/user/login', 'Users::process');
 $routes->get('/user/logout', 'Users::logout');
 
 
+$routes->get('/kosong/(:any)','DataPasien::kosong/$1');
+$routes->get('/qrcode','DataPasien::qrcode');
+
 
 /*
  * --------------------------------------------------------------------
