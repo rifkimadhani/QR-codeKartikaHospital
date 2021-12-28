@@ -90,8 +90,9 @@ class DataPasien extends BaseController
 
     public function qrcode()
     {
+        $qrCode = new QrCode();
         $qrCode
-            ->setText($message)
+            ->setText('URL User')
             ->setSize(300)
             ->setPadding(10)
             ->setErrorCorrection('high')
