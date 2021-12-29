@@ -88,11 +88,16 @@ class DataPasien extends BaseController
         return redirect()->to('/datapasien');
     }
 
-    public function qrcode()
+    public function qrcode($NoReg)
     {
+        $model = new DataPasienModel;
         $qrCode = new QrCode();
+        $url = base_url();
+       
+        $data = $model->where('NoReg', $NoReg)->first();
+        $pesan = $url.'/hasil/'.$data['NoReg'];
         $qrCode
-            ->setText('URL User')
+            ->setText($pesan)
             ->setSize(300)
             ->setPadding(10)
             ->setErrorCorrection('high')
@@ -102,7 +107,15 @@ class DataPasien extends BaseController
             ->setLabelFontSize(16)
             ->setImageType(QrCode::IMAGE_TYPE_PNG)
         ;
-        var_dump('<img src="data:'.$qrCode->getContentType().';base64,'.$qrCode->generate().'" />');
-        exit;
+        $data = '<img style="margin-left:auto;margin-right:auto;"  src="data:'.$qrCode->getContentType().';base64,'.$qrCode->generate().'" download = Data.png />';
+        
+        return $data;
+        
+    }
+    public function hasil($NoReg)
+    {
+        $model = new DataPasienModel;
+        $data['row'] = $model->where('NoReg', $NoReg)->first();
+        echo view('detailhasil',$data);
     }
 }

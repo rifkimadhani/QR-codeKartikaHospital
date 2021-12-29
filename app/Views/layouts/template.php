@@ -70,7 +70,7 @@
                     if(toggle && nav && bodypd && headerpd){
                         toggle.addEventListener('click', ()=>{
                             // show navbar
-                            nav.classList.toggle('show')
+                            nav.classList.toggle('showing')
                             // change icon
                             toggle.classList.toggle('bx-x')
                             // add padding to body
@@ -100,6 +100,21 @@
         $(document).ready(function() {
             $('#example').DataTable();
         });
+
+        function qrcode(el)
+        {
+            let id = $(el).attr('data-id');
+            console.log(id)
+            $.ajax({
+            type : "get",
+            url  : "<?php echo base_url(); ?>/qrcode/" + id,
+            success: function(result){
+                    $('.modalqr').html(result)
+                }
+            });
+        }
+
+       
     </script>
 </body>
 <!-- </body> -->
