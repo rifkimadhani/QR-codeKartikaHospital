@@ -36,7 +36,7 @@ class Users extends BaseController
                 return redirect()->back();
             }
         } else {
-            session()->setFlashdata('error', 'Email & Password Salah');
+            session()->setFlashdata('error', 'Email atau Password salah!');
             return redirect()->back();
         }
     }

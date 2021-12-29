@@ -11,6 +11,27 @@ class DataPasienModel extends Model
     protected $useAutoIncrement = true;
     protected $allowedFields = ['NoReg', 'Nama', 'NIK', 'JenisKelamin', 'TglLahir', 'Negara', 'NoTelp', 'TglHasil', 'Hasil', 'GenN', 'Orf1ab'];
 
+    // public function rules()
+    // {
+    //     return [
+    //         [
+    //             'field' => 'regist',
+    //             'label' => 'No Registrasi',
+    //             'rules' => 'required|numeric'
+    //         ],
+    //         [
+    //             'field' => 'ktp',
+    //             'label' => 'No KTP',
+    //             'rules' => 'required|numeric'
+    //         ],
+    //         [
+    //             'field' => 'telp',
+    //             'label' => 'No Telepon',
+    //             'rules' => 'required|numeric'
+    //         ]
+    //     ];
+    // }
+
     public function getDataPasien($NoReg = false)
     {
         if ($NoReg === false) {

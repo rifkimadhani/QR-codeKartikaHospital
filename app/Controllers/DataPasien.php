@@ -48,6 +48,7 @@ class DataPasien extends BaseController
         $simpan = $pasien->simpan($data);
 
         if ($simpan) {
+            session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan.');
             return redirect()->to('/datapasien');
         } else {
             echo "Error";
@@ -75,6 +76,7 @@ class DataPasien extends BaseController
         // dd($simpan);
 
         if ($simpan) {
+            session()->setFlashdata('pesan', 'Data Berhasil Diubah.');
             return redirect()->to('/datapasien');
         } else {
             echo "Error";
@@ -85,6 +87,7 @@ class DataPasien extends BaseController
     {
         $pasien = new DataPasienModel();
         $data['Datapasien'] = $pasien->delete($NoReg);
+        session()->setFlashdata('pesan', 'Data Telah Dihapus.');
         return redirect()->to('/datapasien');
     }
 
@@ -93,9 +96,9 @@ class DataPasien extends BaseController
         $model = new DataPasienModel;
         $qrCode = new QrCode();
         $url = base_url();
-       
+
         $data = $model->where('NoReg', $NoReg)->first();
-        $pesan = $url.'/hasil/'.$data['NoReg'];
+        $pesan = $url . '/hasil/' . $data['NoReg'];
         $qrCode
             ->setText($pesan)
             ->setSize(300)
@@ -105,17 +108,15 @@ class DataPasien extends BaseController
             ->setBackgroundColor(array('r' => 255, 'g' => 255, 'b' => 255, 'a' => 0))
             ->setLabel('Scan Qr Code')
             ->setLabelFontSize(16)
-            ->setImageType(QrCode::IMAGE_TYPE_PNG)
-        ;
-        $data = '<img style="margin-left:auto;margin-right:auto;"  src="data:'.$qrCode->getContentType().';base64,'.$qrCode->generate().'" download = Data.png />';
-        
+            ->setImageType(QrCode::IMAGE_TYPE_PNG);
+        $data = '<img style="margin-left:auto;margin-right:auto;"  src="data:' . $qrCode->getContentType() . ';base64,' . $qrCode->generate() . '" download = Data.png />';
+
         return $data;
-        
     }
     public function hasil($NoReg)
     {
         $model = new DataPasienModel;
         $data['row'] = $model->where('NoReg', $NoReg)->first();
-        echo view('detailhasil',$data);
+        echo view('detailhasil', $data);
     }
 }

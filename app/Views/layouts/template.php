@@ -59,7 +59,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.3/r-2.2.9/datatables.min.js"></script>
+    <script type="text/javascript" src="<?= base_url('datatables.min.js'); ?>"></script>
     <script type='text/Javascript'>document.addEventListener("DOMContentLoaded", function(event) {
                 const showNavbar = (toggleId, navId, bodyId, headerId) =>{
                     const toggle = document.getElementById(toggleId),
@@ -101,20 +101,17 @@
             $('#example').DataTable();
         });
 
-        function qrcode(el)
-        {
+        function qrcode(el) {
             let id = $(el).attr('data-id');
             console.log(id)
             $.ajax({
-            type : "get",
-            url  : "<?php echo base_url(); ?>/qrcode/" + id,
-            success: function(result){
+                type: "get",
+                url: "<?php echo base_url(); ?>/qrcode/" + id,
+                success: function(result) {
                     $('.modalqr').html(result)
                 }
             });
         }
-
-       
     </script>
 </body>
 <!-- </body> -->
