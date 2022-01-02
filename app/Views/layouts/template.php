@@ -101,8 +101,10 @@
             $('#example').DataTable();
         });
         let reg;
+        let nama;
         function qrcode(el) {
             reg = $(el).attr('data-id');
+            nama = $(el).attr('data-nama');
             console.log(reg)
             $.ajax({
                 type: "get",
@@ -119,9 +121,12 @@
             let src = $('#img').attr('src');
             let savebtn = document.getElementById('link');
             let file = reg
+            let file2 = nama
+            let file3 = reg + "_" + nama
+            console.log(file3)
             
             savebtn.href = src
-            savebtn.setAttribute('download',file);
+            savebtn.setAttribute('download',file3);
         }
     </script>
 </body>
