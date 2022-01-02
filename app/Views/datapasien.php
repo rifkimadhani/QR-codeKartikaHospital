@@ -63,6 +63,7 @@
 
             </div>
             <div class="modal-footer">
+                <a href="" type="" id="link" onclick = save() class="btn btn-success">Save</a>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>

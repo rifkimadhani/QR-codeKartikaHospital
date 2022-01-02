@@ -112,6 +112,15 @@
                 }
             });
         }
+
+        function save()
+        {
+            let src = $('#img').attr('src');
+            let savebtn = document.getElementById('link');
+
+            savebtn.href = src
+            savebtn.setAttribute('download',"download");
+        }
     </script>
 </body>
 <!-- </body> -->

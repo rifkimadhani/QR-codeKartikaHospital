@@ -109,7 +109,7 @@ class DataPasien extends BaseController
             ->setLabel('Scan Qr Code')
             ->setLabelFontSize(16)
             ->setImageType(QrCode::IMAGE_TYPE_PNG);
-        $data = '<img style="margin-left:auto;margin-right:auto;"  src="data:' . $qrCode->getContentType() . ';base64,' . $qrCode->generate() . '" download = Data.png />';
+        $data = '<img style="margin-left:auto;margin-right:auto;"  src="data:' . $qrCode->getContentType() . ';base64,' . $qrCode->generate() . '" id=img  download = Data.png />';
 
         return $data;
     }
