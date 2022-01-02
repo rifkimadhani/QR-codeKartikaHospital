@@ -100,15 +100,16 @@
         $(document).ready(function() {
             $('#example').DataTable();
         });
-
+        let reg;
         function qrcode(el) {
-            let id = $(el).attr('data-id');
-            console.log(id)
+            reg = $(el).attr('data-id');
+            console.log(reg)
             $.ajax({
                 type: "get",
-                url: "<?php echo base_url(); ?>/qrcode/" + id,
+                url: "<?php echo base_url(); ?>/qrcode/" + reg,
                 success: function(result) {
                     $('.modalqr').html(result)
+                   
                 }
             });
         }
@@ -117,9 +118,10 @@
         {
             let src = $('#img').attr('src');
             let savebtn = document.getElementById('link');
-
+            let file = reg
+            
             savebtn.href = src
-            savebtn.setAttribute('download',"download");
+            savebtn.setAttribute('download',file);
         }
     </script>
 </body>
