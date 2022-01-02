@@ -32,7 +32,7 @@
                         <i class='bx bx-grid-alt nav_icon'></i>
                         <span class="nav_name">Dashboard</span>
                     </a>
-                    <a href="<?= base_url('datapasien/tambah') ?>"  class="nav_link">
+                    <a href="<?= base_url('datapasien/tambah') ?>" class="nav_link">
                         <i class='bx bxs-user nav_icon'></i>
                         <span class="nav_name">Tambah Data</span>
                     </a>
@@ -42,7 +42,7 @@
                     </a>
                 </div>
             </div>
-            <a href="<?= base_url()?>" class="nav_link">
+            <a href="<?= base_url('/user/logout') ?>" class="nav_link">
                 <i class='bx bx-log-out nav_icon'></i>
                 <span class="nav_name">SignOut</span>
             </a>
@@ -59,7 +59,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.3/r-2.2.9/datatables.min.js"></script>
+    <script type="text/javascript" src="<?= base_url('datatables.min.js'); ?>"></script>
     <script type='text/Javascript'>document.addEventListener("DOMContentLoaded", function(event) {
                 const showNavbar = (toggleId, navId, bodyId, headerId) =>{
                     const toggle = document.getElementById(toggleId),
@@ -70,7 +70,7 @@
                     if(toggle && nav && bodypd && headerpd){
                         toggle.addEventListener('click', ()=>{
                             // show navbar
-                            nav.classList.toggle('show')
+                            nav.classList.toggle('showing')
                             // change icon
                             toggle.classList.toggle('bx-x')
                             // add padding to body
@@ -100,6 +100,18 @@
         $(document).ready(function() {
             $('#example').DataTable();
         });
+
+        function qrcode(el) {
+            let id = $(el).attr('data-id');
+            console.log(id)
+            $.ajax({
+                type: "get",
+                url: "<?php echo base_url(); ?>/qrcode/" + id,
+                success: function(result) {
+                    $('.modalqr').html(result)
+                }
+            });
+        }
     </script>
 </body>
 <!-- </body> -->

@@ -52,8 +52,8 @@
                         </div>
                         <select name="jk" class="form-select" value="<?= $row['JenisKelamin']; ?>" aria-describedby="basic-addon1" required>
                             <option value="">Pilih..</option>
-                            <option value="<?= $row['JenisKelamin']; ?>">Laki-laki</option>
-                            <option value="<?= $row['JenisKelamin']; ?>">Perempuan</option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
                         </select>
                     </div>
                 </div>
@@ -95,8 +95,8 @@
                         </div>
                         <select name="hasil" class="form-select" aria-describedby="basic-addon1" value="<?= $row['Hasil']; ?>" required>
                             <option value="">Pilih..</option>
-                            <option value="<?= $row['Hasil']; ?>">Positif</option>
-                            <option value="<?= $row['Hasil']; ?>">Negatif</option>
+                            <option value="Positif">Positif</option>
+                            <option value="Negatif">Negatif</option>
                         </select>
                     </div>
                 </div>

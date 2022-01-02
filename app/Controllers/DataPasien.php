@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\DataPasienModel;
+use CodeItNow\BarcodeBundle\Utils\QrCode;
 
 class DataPasien extends BaseController
 {
@@ -19,14 +20,14 @@ class DataPasien extends BaseController
         echo view('addpasien');
     }
 
-    public function kosong($id)
+    public function edit($id)
     {
         $model = new DataPasienModel;
         $data['row'] = $model->where('NoReg', $id)->first();
-        echo view('editpasien',$data);
+        echo view('editpasien', $data);
     }
 
-    
+
     public function simpan()
     {
         $data = [
@@ -47,6 +48,7 @@ class DataPasien extends BaseController
         $simpan = $pasien->simpan($data);
 
         if ($simpan) {
+            session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan.');
             return redirect()->to('/datapasien');
         } else {
             echo "Error";
@@ -74,6 +76,7 @@ class DataPasien extends BaseController
         // dd($simpan);
 
         if ($simpan) {
+            session()->setFlashdata('pesan', 'Data Berhasil Diubah.');
             return redirect()->to('/datapasien');
         } else {
             echo "Error";
@@ -84,6 +87,36 @@ class DataPasien extends BaseController
     {
         $pasien = new DataPasienModel();
         $data['Datapasien'] = $pasien->delete($NoReg);
+        session()->setFlashdata('pesan', 'Data Telah Dihapus.');
         return redirect()->to('/datapasien');
+    }
+
+    public function qrcode($NoReg)
+    {
+        $model = new DataPasienModel;
+        $qrCode = new QrCode();
+        $url = base_url();
+
+        $data = $model->where('NoReg', $NoReg)->first();
+        $pesan = $url . '/hasil/' . $data['NoReg'];
+        $qrCode
+            ->setText($pesan)
+            ->setSize(300)
+            ->setPadding(10)
+            ->setErrorCorrection('high')
+            ->setForegroundColor(array('r' => 0, 'g' => 0, 'b' => 0, 'a' => 0))
+            ->setBackgroundColor(array('r' => 255, 'g' => 255, 'b' => 255, 'a' => 0))
+            ->setLabel('Scan Qr Code')
+            ->setLabelFontSize(16)
+            ->setImageType(QrCode::IMAGE_TYPE_PNG);
+        $data = '<img style="margin-left:auto;margin-right:auto;"  src="data:' . $qrCode->getContentType() . ';base64,' . $qrCode->generate() . '" download = Data.png />';
+
+        return $data;
+    }
+    public function hasil($NoReg)
+    {
+        $model = new DataPasienModel;
+        $data['row'] = $model->where('NoReg', $NoReg)->first();
+        echo view('detailhasil', $data);
     }
 }
