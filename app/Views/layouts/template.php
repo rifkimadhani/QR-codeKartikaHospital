@@ -25,7 +25,7 @@
         <nav class="nav">
             <div>
                 <a href="<?= base_url() ?>">
-                    <img src="<?= base_url('assets/logo-kartika.png') ?>" alt="KARTIKA HOSPITAL" style="height: 50px; padding-left:3px; margin-bottom:40px;">
+                    <img src="<?= base_url('assets/logo-kartika2.png') ?>" alt="KARTIKA HOSPITAL" style="height: 50px; padding-left:3px; margin-bottom:40px;">
                 </a>
                 <div class="nav_list">
                     <a href="<?= base_url() ?>" class="nav_link">
@@ -101,6 +101,7 @@
             $('#example').DataTable();
         });
         let reg;
+
         function qrcode(el) {
             reg = $(el).attr('data-id');
             console.log(reg)
@@ -109,19 +110,18 @@
                 url: "<?php echo base_url(); ?>/qrcode/" + reg,
                 success: function(result) {
                     $('.modalqr').html(result)
-                   
+
                 }
             });
         }
 
-        function save()
-        {
+        function save() {
             let src = $('#img').attr('src');
             let savebtn = document.getElementById('link');
             let file = reg
-            
+
             savebtn.href = src
-            savebtn.setAttribute('download',file);
+            savebtn.setAttribute('download', file);
         }
     </script>
 </body>

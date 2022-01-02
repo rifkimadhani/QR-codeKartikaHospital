@@ -18,7 +18,10 @@
 
 <body id="body-pd" class="snippet-body" style="height: 100%;">
     <header class="header" id="header">
-        <div class="header_toggle"> <img src="<?= base_url('assets/logo-kartika.png') ?>" alt="KARTIKA HOSPITAL" style="height: 50px;"></div>
+        <div class="header_toggle">
+            <img src="<?= base_url('assets/logo-kartika2.png') ?>" alt="KARTIKA HOSPITAL" style="height: 50px;">
+            Kartika Hospital
+        </div>
         <div class="header_img"> </div>
     </header>
 
