@@ -21,7 +21,7 @@
         <div class="header_toggle"> <img src="<?= base_url('assets/logo-kartika.png') ?>" alt="KARTIKA HOSPITAL" style="height: 50px;"></div>
         <div class="header_img"> </div>
     </header>
-   
+
     <!--Container Main start-->
     <div style="background: #f0f2f5;">
         <div style="padding-top: 30px; padding-bottom: 30px;">
@@ -146,6 +146,14 @@
     <!-- <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script> -->
     <script src="<?= base_url('bootstrap/js/bootstrap.js') ?>"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        var tgl_test = "<?php echo $row['TglHasil'] ?>";
+        var hasil = "<?php echo $row['Hasil']; ?>";
+        var tgl_lahir = "<?php echo $row['TglLahir']; ?>"
+        var nama = "<?php echo $row['Nama']; ?>"
+        alert('Hasil pemeriksaan SWAB PCR pada tanggal ' + tgl_test + ' Dengan hasil ' + hasil + ' Atas nama ' + nama + ' Dengan Tanggal lahir ' + tgl_lahir + ' ini Valid dan Sah')
+        console.log(php_var)
+    </script>
 </body>
 <!-- </body> -->
 
