@@ -38,7 +38,7 @@
                         <td><?= $row['TglHasil']; ?></td>
                         <td><?= $row['Hasil']; ?></td>
                         <td>
-                            <a href="#" class="qrcode" data-bs-toggle="modal" data-bs-target="#exampleModal" id="qrcode" data-id="<?= $row['NoReg'] ?>" onclick=qrcode(this)><span><i class="bx bx-qr" style="color: #096b39;font-size : 18px;"></i></span></a>
+                            <a href="#" class="qrcode" data-bs-toggle="modal" data-bs-target="#exampleModal" id="qrcode" data-id="<?= $row['NoReg'] ?>" data-nama="<?= $row['Nama'] ?>" onclick=qrcode(this)><span><i class="bx bx-qr" style="color: #096b39;font-size : 18px;"></i></span></a>
 
                             <a href="<?= base_url('edit/' . $row['NoReg']) ?>"><span><i class="bx bxs-pencil mx-1" style="color: #52525c;font-size : 18px;"></i></span></a>
 
