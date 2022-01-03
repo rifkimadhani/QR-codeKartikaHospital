@@ -16,7 +16,7 @@
 
 <div class="card w-80 shadow p-4 rounded-3" style="margin-right: 0.98rem; border:none; ">
     <div>
-        <table id="example" class="table table-striped" style="width:100%">
+        <table id="example" class="table table-striped" style="margin-right: 0.98rem;">
             <thead>
                 <tr class="text-left" style="font-size: 13px;">
                     <th>NoReg</th>
@@ -63,7 +63,7 @@
 
             </div>
             <div class="modal-footer">
-                <a href="" type="" id="link" onclick = save() class="btn btn-success">Save</a>
+                <a href="" type="" id="link" onclick=save() class="btn btn-success">Save</a>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
