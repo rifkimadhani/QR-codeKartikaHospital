@@ -155,7 +155,6 @@
         var tgl_lahir = "<?php echo $row['TglLahir']; ?>"
         var nama = "<?php echo $row['Nama']; ?>"
         alert('Hasil pemeriksaan SWAB PCR pada tanggal ' + tgl_test + ' Dengan hasil ' + hasil + ' Atas nama ' + nama + ' Dengan Tanggal lahir ' + tgl_lahir + ' ini Valid dan Sah.')
-        console.log(php_var)
     </script>
 </body>
 <!-- </body> -->
