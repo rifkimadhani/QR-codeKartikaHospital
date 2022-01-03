@@ -17,17 +17,20 @@
 <!-- <body oncontextmenu='return true' class='snippet-body'> -->
 
 <body id="body-pd" class="snippet-body" style="height: 100%;">
-    <header class="header" id="header">
-        <div class="header_toggle"> <img src="<?= base_url('assets/logo-kartika.png') ?>" alt="KARTIKA HOSPITAL" style="height: 50px;"></div>
-        <div class="header_img"> </div>
-    </header>
+    <!-- <header class="header" id="header">
+        <div class="header_toggle">
+            <img src="<?= base_url('assets/rata-flip.png') ?>" alt="KARTIKA HOSPITAL" style="height: 50px;">
+        </div>
+    </header> -->
 
     <!--Container Main start-->
     <div style="background: #f0f2f5;">
-        <div style="padding-top: 30px; padding-bottom: 30px;">
-            <h2 class="align-middle"><i class="bx bxs-user align-middle"></i> Hasil Pemeriksaan SWAB PCR</h2>
+        <!-- <div style="padding-top: 30px; padding-bottom: 30px;"></div> -->
+        <div class="card-header w-80 shadow rounded-3" style="background:#096b39; margin-right: 14px; border:none; ">
+            <p class="text-center mb-0" style="color:#ffffff;">Hasil Pemerikasan SWAB PCR</p>
         </div>
         <div class="card w-80 shadow p-4 rounded-3" style="margin-right: 14px; border:none; ">
+
             <form action="" method="post">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
@@ -151,7 +154,7 @@
         var hasil = "<?php echo $row['Hasil']; ?>";
         var tgl_lahir = "<?php echo $row['TglLahir']; ?>"
         var nama = "<?php echo $row['Nama']; ?>"
-        alert('Hasil pemeriksaan SWAB PCR pada tanggal ' + tgl_test + ' Dengan hasil ' + hasil + ' Atas nama ' + nama + ' Dengan Tanggal lahir ' + tgl_lahir + ' ini Valid dan Sah')
+        alert('Hasil pemeriksaan SWAB PCR pada tanggal ' + tgl_test + ' Dengan hasil ' + hasil + ' Atas nama ' + nama + ' Dengan Tanggal lahir ' + tgl_lahir + ' ini Valid dan Sah.')
         console.log(php_var)
     </script>
 </body>
