@@ -14,8 +14,8 @@
 <?php endif; ?>
 
 
-<div class="card w-80 shadow p-4 rounded-3" style="margin-right: 0.98rem; border:none; ">
-    <div>
+<div class="card shadow p-4 rounded-3" style="margin-right: 0.98rem; border:none; ">
+    <div class="table-responsive-sm">
         <table id="example" class="table table-striped" style="width:100%">
             <thead>
                 <tr class="text-left" style="font-size: 13px;">
