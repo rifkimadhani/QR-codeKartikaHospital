@@ -14,9 +14,9 @@
 
 </head>
 
-<!-- <body oncontextmenu='return true' class='snippet-body'> -->
+<body oncontextmenu='return true' class='snippet-body'>
 
-<body id="body-pd" class="snippet-body" style="height: 100%;">
+<body id="body-pd" style="height: 100%;">
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <div class="header_img"> <i class="bx bxs-user bx-lg" style="color: #fff;"></i> </div>
