@@ -20,4 +20,10 @@ class UsersModel extends Model
             return $this->getWhere(['id' => $id]);
         }
     }
+
+    public function editData($data, $id)
+    {
+        $query = $this->db->table('user')->update($data, array('id' => $id));
+        return $query;
+    }
 }

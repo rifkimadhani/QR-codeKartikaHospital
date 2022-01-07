@@ -29,10 +29,6 @@
                 </a>
 
                 <div class="nav_list">
-                    <a href="<?= base_url() ?>" class="nav_link">
-                        <i class='bx bx-grid-alt nav_icon'></i>
-                        <span class="nav_name">Dashboard</span>
-                    </a>
                     <a href="<?= base_url('datapasien/tambah') ?>" class="nav_link">
                         <i class='bx bxs-user nav_icon'></i>
                         <span class="nav_name">Tambah Data</span>
@@ -40,6 +36,10 @@
                     <a href="<?= base_url('datapasien') ?>" class="nav_link">
                         <i class='bx bx-detail nav_icon'></i>
                         <span class="nav_name">Data Hasil SWAB</span>
+                    </a>
+                    <a href="<?= base_url('/user/password') ?>" class="nav_link">
+                        <i class='bx bx-key nav_icon'></i>
+                        <span class="nav_name">Ganti Password</span>
                     </a>
                 </div>
             </div>

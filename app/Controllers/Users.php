@@ -6,6 +6,7 @@ use App\Models\UsersModel;
 
 class Users extends BaseController
 {
+  
     public function index()
     {
         return view('login');
@@ -46,5 +47,31 @@ class Users extends BaseController
         $session = session();
         $session->destroy();
         return redirect()->to('/');
+    }
+
+    public function password()
+    {
+        echo view('changepw');
+    }
+
+    public function changepw()
+    {
+        $data = [
+            'password' =>password_hash($this->request->getVar('password'), PASSWORD_BCRYPT)
+            
+        ];
+        $session = session();
+        $session_id = $session->__get('id');
+        $user = new UsersModel();
+        $simpan = $user->editData($data, $session_id);
+        // dd($simpan);
+
+        if ($simpan) {
+            session()->setFlashdata('pesan', 'Data Berhasil Diubah.');
+            return redirect()->to('/datapasien');
+        } else {
+            echo "Error";
+        }
+
     }
 }
