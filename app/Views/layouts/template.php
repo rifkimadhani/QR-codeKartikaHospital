@@ -17,33 +17,33 @@
 <body oncontextmenu='return true' class='snippet-body'>
 
 
-<body id="body-pd" style="height: 100%;">
-    <header class="header" id="header">
-        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-        <div class="header_img"> <i class="bx bxs-user bx-lg" style="color: #fff;"></i> </div>
-    </header>
-    <div class="l-navbar" id="nav-bar">
-        <nav class="nav">
-            <div>
-                <a href="<?= base_url() ?>">
-                    <img src="<?= base_url('assets/rata-flip.png') ?>" alt="KARTIKA HOSPITAL" style="height: 50px; padding-left:3px; margin-bottom:40px;" />
-                </a>
+    <body id="body-pd" style="height: 100%;">
+        <header class="header" id="header">
+            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+            <div class="header_img"> <i class="bx bxs-user bx-lg" style="color: #fff;"></i> </div>
+        </header>
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div>
+                    <a href="<?= base_url() ?>">
+                        <img src="<?= base_url('assets/rata-flip.png') ?>" alt="KARTIKA HOSPITAL" style="height: 50px; padding-left:3px; margin-bottom:40px;" />
+                    </a>
 
-                <div class="nav_list">
-                    <a href="<?= base_url('datapasien/tambah') ?>" class="nav_link">
-                        <i class='bx bxs-user nav_icon'></i>
-                        <span class="nav_name">Tambah Data</span>
-                    </a>
-                    <a href="<?= base_url('datapasien') ?>" class="nav_link">
-                        <i class='bx bx-detail nav_icon'></i>
-                        <span class="nav_name">Data Hasil SWAB</span>
-                    </a>
-                    <a href="<?= base_url('/user/password') ?>" class="nav_link">
-                        <i class='bx bx-key nav_icon'></i>
-                        <span class="nav_name">Ganti Password</span>
-                    </a>
+                    <div class="nav_list">
+                        <a href="<?= base_url('datapasien/tambah') ?>" class="nav_link">
+                            <i class='bx bxs-user nav_icon'></i>
+                            <span class="nav_name">Tambah Data</span>
+                        </a>
+                        <a href="<?= base_url('datapasien') ?>" class="nav_link">
+                            <i class='bx bx-detail nav_icon'></i>
+                            <span class="nav_name">Data Hasil SWAB</span>
+                        </a>
+                        <a href="<?= base_url('/user/password') ?>" class="nav_link">
+                            <i class='bx bxs-key nav_icon'></i>
+                            <span class="nav_name">Ganti Password</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
                 <a href="<?= base_url('/user/logout') ?>" class="nav_link">
                     <i class='bx bx-log-out nav_icon'></i>
                     <span class="nav_name">SignOut</span>

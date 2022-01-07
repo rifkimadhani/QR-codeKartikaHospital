@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 <div style="padding-top: 30px; padding-bottom: 30px;">
-    <h2 class="align-middle"><i class="bx bxs-user-plus align-middle"></i> Edit Data</h2>
+    <h2 style="font-weight:600;"><span style="display:inline; vertical-align: middle;"><i class="bx bxs-user-plus"></i></span> Edit Data</h2>
 </div>
 <div class="card w-80 shadow p-4 rounded-3" style="margin-right: 14px; border:none; ">
     <form action="<?= base_url('datapasien/update/' . $row['NoReg']) ?>" method="post">

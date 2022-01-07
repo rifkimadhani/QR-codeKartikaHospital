@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 <div style="padding-top: 30px; padding-bottom: 30px;">
-    <h2 class="align-middle"><i class="bx bxs-detail align-middle"></i> Data Hasil SWAB/PCR</h2>
+    <h2 style="font-weight:600;"><span style="display:inline; vertical-align: middle;"><i class="bx bxs-detail"></span></i> Data Hasil SWAB/PCR</h2>
 </div>
 
 
