@@ -43,6 +43,7 @@
                         <span class="nav_name">Ganti Password</span>
                     </a>
                 </div>
+            </div>
                 <a href="<?= base_url('/user/logout') ?>" class="nav_link">
                     <i class='bx bx-log-out nav_icon'></i>
                     <span class="nav_name">SignOut</span>
