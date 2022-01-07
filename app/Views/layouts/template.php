@@ -16,6 +16,7 @@
 
 <body oncontextmenu='return true' class='snippet-body'>
 
+
 <body id="body-pd" style="height: 100%;">
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
@@ -42,26 +43,25 @@
                         <span class="nav_name">Ganti Password</span>
                     </a>
                 </div>
-            </div>
-            <a href="<?= base_url('/user/logout') ?>" class="nav_link">
-                <i class='bx bx-log-out nav_icon'></i>
-                <span class="nav_name">SignOut</span>
-            </a>
-        </nav>
-    </div>
-    <!--Container Main start-->
-    <div style="background: #f0f2f5;">
-        <?= $this->renderSection('content') ?>
-    </div>
-    <!--Container Main end-->
+                <a href="<?= base_url('/user/logout') ?>" class="nav_link">
+                    <i class='bx bx-log-out nav_icon'></i>
+                    <span class="nav_name">SignOut</span>
+                </a>
+            </nav>
+        </div>
+        <!--Container Main start-->
+        <div style="background: #f0f2f5;">
+            <?= $this->renderSection('content') ?>
+        </div>
+        <!--Container Main end-->
 
-    <!-- <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script> -->
-    <script src="<?= base_url('bootstrap/js/bootstrap.js') ?>"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
-    <script type="text/javascript" src="<?= base_url('datatables.min.js'); ?>"></script>
-    <script type='text/Javascript'>document.addEventListener("DOMContentLoaded", function(event) {
+        <!-- <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script> -->
+        <script src="<?= base_url('bootstrap/js/bootstrap.js') ?>"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+        <script type="text/javascript" src="<?= base_url('datatables.min.js'); ?>"></script>
+        <script type='text/Javascript'>document.addEventListener("DOMContentLoaded", function(event) {
                 const showNavbar = (toggleId, navId, bodyId, headerId) =>{
                     const toggle = document.getElementById(toggleId),
                     nav = document.getElementById(navId),
@@ -97,35 +97,35 @@
                 linkColor.forEach(l=> l.addEventListener('click', colorLink))
             });
         </script>
-    <script>
-        $(document).ready(function() {
-            $('#example').DataTable();
-        });
-        let reg;
-
-        function qrcode(el) {
-            reg = $(el).attr('data-id');
-            console.log(reg)
-            $.ajax({
-                type: "get",
-                url: "<?php echo base_url(); ?>/qrcode/" + reg,
-                success: function(result) {
-                    $('.modalqr').html(result)
-
-                }
+        <script>
+            $(document).ready(function() {
+                $('#example').DataTable();
             });
-        }
+            let reg;
 
-        function save() {
-            let src = $('#img').attr('src');
-            let savebtn = document.getElementById('link');
-            let file = reg;
+            function qrcode(el) {
+                reg = $(el).attr('data-id');
+                console.log(reg)
+                $.ajax({
+                    type: "get",
+                    url: "<?php echo base_url(); ?>/qrcode/" + reg,
+                    success: function(result) {
+                        $('.modalqr').html(result)
 
-            savebtn.href = src;
-            savebtn.setAttribute('download', file);
-        }
-    </script>
-</body>
-<!-- </body> -->
+                    }
+                });
+            }
+
+            function save() {
+                let src = $('#img').attr('src');
+                let savebtn = document.getElementById('link');
+                let file = reg;
+
+                savebtn.href = src;
+                savebtn.setAttribute('download', file);
+            }
+        </script>
+    </body>
+    <!-- </body> -->
 
 </html>
