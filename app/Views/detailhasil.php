@@ -9,27 +9,27 @@
     <!-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'> -->
     <link rel="stylesheet" href="<?= base_url('bootstrap/css/bootstrap.css') ?>">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="<?= base_url('style.css') ?>">
+    <!-- <link rel="stylesheet" href=""> -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/r-2.2.9/datatables.min.css" />
 
 </head>
 
 <!-- <body oncontextmenu='return true' class='snippet-body'> -->
 
-<body id="body-pd" class="snippet-body" style="height: 100%;">
+<body class="ml-30" style="height: 100%;">
     <!-- <header class="header" id="header">
         <div class="header_toggle">
-            <img src="<?= base_url('assets/rata-flip.png') ?>" alt="KARTIKA HOSPITAL" style="height: 50px;">
+            <img src="#" alt="KARTIKA HOSPITAL" style="height: 50px;">
         </div>
     </header> -->
 
     <!--Container Main start-->
-    <div style="background: #f0f2f5;">
+    <div>
         <!-- <div style="padding-top: 30px; padding-bottom: 30px;"></div> -->
-        <div class="card-header w-80 shadow rounded-3" style="background:#096b39; margin-right: 14px; border:none; ">
+        <div class="card-header w-80 shadow rounded-3" style="background:#096b39; border:none; margin-top: 30px; margin-left: 30px; margin-right: 30px;">
             <p class="text-center mb-0" style="color:#ffffff;">Hasil Pemerikasan SWAB PCR</p>
         </div>
-        <div class="card w-80 shadow p-4 rounded-3" style="margin-right: 14px; border:none; ">
+        <div class="card w-80 shadow p-4 rounded-3" style="margin-bottom: 30px; margin-left: 30px; margin-right: 30px; border:none; ">
 
             <form action="" method="post">
                 <div class="row">
