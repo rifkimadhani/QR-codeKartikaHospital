@@ -42,6 +42,8 @@ $routes->post('/datapasien/update/(:any)', 'DataPasien::update/$1', ['filter' =>
 // Login
 $routes->post('/user/login', 'Users::process');
 $routes->get('/user/logout', 'Users::logout');
+$routes->post('/user/changepw', 'Users::changepw');
+$routes->get('/user/password', 'Users::password');
 
 
 $routes->get('/kosong/(:any)','DataPasien::kosong/$1');
